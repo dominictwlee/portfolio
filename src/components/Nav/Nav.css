@@ -1,0 +1,8 @@
+.list {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.item {
+  margin-left: 2rem;
+}
