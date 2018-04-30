@@ -33,21 +33,21 @@
   border-radius: 100%;
 }
 
-.textItem1 {
+.professional {
   grid-column: 2 / span 1;
 }
 
-.textItem2 {
+.personal {
   grid-column: 3 / span 1;
 }
 
-.textItem3 {
+.social {
   grid-column: 4 / span 1;
 }
 
-.textItem1,
-.textItem2,
-.textItem3 {
+.professional,
+.personal,
+.social {
   grid-row: 3;
   margin: 2rem 0;
 }
