@@ -1,9 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import styles from './Nav.css';
 
-const Nav = () => (
+const Nav = props => (
   <nav className={styles.navbar}>
     <ul className={styles.list}>
       <li className={styles.item}>
@@ -16,9 +17,15 @@ const Nav = () => (
           Projects
         </NavLink>
       </li>
-      <li className={styles.item}>Contact</li>
+      <li className={styles.item}>
+        <button onClick={props.toggleModal}>Contact</button>
+      </li>
     </ul>
   </nav>
 );
+
+Nav.propTypes = {
+  toggleModal: PropTypes.func.isRequired
+};
 
 export default Nav;

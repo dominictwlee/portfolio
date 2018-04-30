@@ -36,12 +36,17 @@ const bodyContent = [
 ];
 
 const BodyColumn = props => (
-  <section className={props.styleClass}>{props.text.map(paragraph => <p>{paragraph}</p>)}</section>
+  <section className={props.styleClass}>
+    {props.text.map((paragraph, index) => (
+      <p key={`${props.topic}${index}`}>{paragraph}</p> // eslint-disable-line react/no-array-index-key
+    ))}
+  </section>
 );
 
 BodyColumn.propTypes = {
   styleClass: PropTypes.string.isRequired,
-  text: PropTypes.arrayOf(PropTypes.string).isRequired
+  text: PropTypes.arrayOf(PropTypes.string).isRequired,
+  topic: PropTypes.string.isRequired
 };
 
 const HomeMain = () => (
@@ -55,7 +60,9 @@ const HomeMain = () => (
     </figure>
     <h1 className={styles.header}>Hey, I&apos;m Dom.</h1>
     <h2 className={styles.subHeader}>Web Developer based in London. Learning, building, and creating things.</h2>
-    {bodyContent.map(topic => <BodyColumn styleClass={topic.class} text={topic.body} key={topic.name} />)}
+    {bodyContent.map(topic => (
+      <BodyColumn styleClass={topic.class} text={topic.body} key={topic.topic} topic={topic.topic} />
+    ))}
   </main>
 );
 
