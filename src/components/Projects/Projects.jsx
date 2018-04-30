@@ -1,34 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './Projects.css';
+
+const Card = props => (
+  <div className={styles.card}>
+    <img src={props.image} alt={props.name} />
+    <h1>{props.name}</h1>
+    <p>{props.description}</p>
+  </div>
+);
+
+Card.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
+};
 
 const Projects = () => (
   <main className={styles.container}>
     <h1 className={styles.title}>Projects</h1>
-    <div className={styles.card}>
-      <img
-        src="https://i1.wp.com/www.styleshout.com/wp-content/uploads/2017/05/dazzle.jpg?fit=1050%2C730&ssl=1"
-        alt=""
-      />
-      <h1>Hello World</h1>
-      <p>Stuff stuff stuff stuff</p>
-    </div>
-    <div className={styles.card}>
-      <img
-        src="https://i1.wp.com/www.styleshout.com/wp-content/uploads/2017/05/dazzle.jpg?fit=1050%2C730&ssl=1"
-        alt=""
-      />
-      <h1>Hello World</h1>
-      <p>Stuff stuff stuff stuff</p>
-    </div>
-    <div className={styles.card}>
-      <img
-        src="https://i1.wp.com/www.styleshout.com/wp-content/uploads/2017/05/dazzle.jpg?fit=1050%2C730&ssl=1"
-        alt=""
-      />
-      <h1>Hello World</h1>
-      <p>Stuff stuff stuff stuff</p>
-    </div>
+    <Card />
+    <Card />
+    <Card />
   </main>
 );
 
