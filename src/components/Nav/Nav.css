@@ -6,3 +6,7 @@
 .item {
   margin-left: 2rem;
 }
+
+.activeLink {
+  text-decoration: underline;
+}

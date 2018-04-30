@@ -73,17 +73,15 @@ th {
   text-align: left;
 }
 
-/*============ Global Styles ============ */
+/*============ Base Styles ============ */
 
-:root {
-  --black: #11141e;
-  --white: #f7f8f8;
-  --red: #b3001b;
-}
+@value black: #11141e;
+@value white: #f7f8f8;
+@value red: #b3001b;
 
 html {
-  background-color: var(--white);
-  color: var(--black);
+  background-color: white;
+  color: black;
   font-family: sans-serif;
   font-size: 18px;
   line-height: 1.5;
@@ -91,6 +89,11 @@ html {
   min-width: 300px;
   overflow-x: hidden;
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .pageContainer {

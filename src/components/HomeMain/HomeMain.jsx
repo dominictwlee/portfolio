@@ -12,7 +12,7 @@ const HomeMain = () => (
       />
     </figure>
     <h1 className={styles.header}>Hey, I&apos;m Dom.</h1>
-    <h2 className={styles.subHeader}>Web Developer. Learning, building, and creating things.</h2>
+    <h2 className={styles.subHeader}>Web Developer based in London. Learning, building, and creating things.</h2>
     <section className={styles.textItem1}>
       <p>
         At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
