@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './HomeMain.css';
+import portrait from '../../assets/portrait.png';
 
 const bodyContent = [
   {
@@ -51,13 +52,9 @@ BodyColumn.propTypes = {
 
 const HomeMain = () => (
   <main className={styles.container}>
-    <figure className={styles.imgContainer}>
-      <img
-        className={styles.image}
-        src="http://121clicks.com/wp-content/uploads/2012/04/portrait_eyes_14.jpg"
-        alt="Portrait"
-      />
-    </figure>
+    <div className={styles.imgContainer}>
+      <img className={styles.image} src={portrait} alt="Dom Lee Portrait" />
+    </div>
     <h1 className={styles.header}>Hey, I&apos;m Dom.</h1>
     <h2 className={styles.subHeader}>Web Developer based in London. Learning, building, and creating things.</h2>
     {bodyContent.map(topic => (

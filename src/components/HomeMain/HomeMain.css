@@ -31,6 +31,7 @@
 
 .image {
   border-radius: 100%;
+  min-width: 12rem;
 }
 
 .professional {
