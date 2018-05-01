@@ -1,13 +1,46 @@
+@values black, white, red from '../App/App.css';
+
 .list {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.item {
+.link,
+.buttonItem {
   margin-left: 2rem;
 }
 
+.link {
+  position: relative;
+  color: black;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -0.2rem;
+  left: 50%;
+  right: 50%;
+  height: 0.1rem;
+  background: black;
+  transition: all ease 0.2s;
+}
+
+.link:hover::after {
+  left: 0;
+  right: 0;
+  height: 0.1rem;
+}
+
+.link::before {
+  position: absolute;
+  transform: translateX(-100%);
+  left: -0.8rem;
+  opacity: 0.3;
+  font-weight: bold;
+}
+
 .activeLink {
-  text-decoration: underline;
+  color: red;
 }

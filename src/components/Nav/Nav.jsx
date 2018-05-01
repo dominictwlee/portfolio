@@ -8,16 +8,16 @@ const Nav = props => (
   <nav className={styles.navbar}>
     <ul className={styles.list}>
       <li className={styles.item}>
-        <NavLink exact activeClassName={styles.activeLink} to="/">
+        <NavLink exact activeClassName={styles.activeLink} className={styles.link} to="/">
           Home
         </NavLink>
       </li>
       <li className={styles.item}>
-        <NavLink activeClassName={styles.activeLink} to="/projects">
+        <NavLink activeClassName={styles.activeLink} className={styles.link} to="/projects">
           Projects
         </NavLink>
       </li>
-      <li className={styles.item}>
+      <li className={styles.buttonItem}>
         <button onClick={props.toggleModal}>Contact</button>
       </li>
     </ul>
