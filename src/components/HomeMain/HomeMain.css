@@ -1,10 +1,17 @@
+@value small, medium from '../App/breakpoints.css';
+
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(3rem, 1fr));
   grid-column-gap: 1.5rem;
   margin: 2rem 0;
-  /* max-width: 20rem; */
+
+  @media small {
+    grid-column-gap: 1rem;
+    grid-row-gap: 2rem;
+    justify-items: center;
+  }
 }
 
 .header {
@@ -13,37 +20,46 @@
   grid-column: 2 / span 3;
   grid-row: 1 / span 1;
   align-self: center;
+
+  @media small {
+    grid-column: 1;
+    grid-row: 2 / span 1;
+    font-size: 2rem;
+  }
 }
 
 .subHeader {
   font-size: 1.3rem;
   font-weight: bold;
-  grid-column: 2 / span 3;
+  grid-column: 2;
   grid-row: 2 / span 1;
   align-self: center;
+
+  @media small {
+    grid-column: 1;
+    grid-row: 3;
+  }
 }
 
 .imgContainer {
   grid-column: 1 / span 1;
   grid-row: 1 / span 3;
   margin-right: 2rem;
+
+  @media small {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+  }
 }
 
 .image {
   border-radius: 100%;
-  min-width: 12rem;
-}
+  max-width: 20rem;
 
-.professional {
-  grid-column: 2 / span 1;
-}
-
-.personal {
-  grid-column: 3 / span 1;
-}
-
-.social {
-  grid-column: 4 / span 1;
+  @media small {
+    max-width: 15rem;
+  }
 }
 
 .professional,
@@ -51,4 +67,37 @@
 .social {
   grid-row: 3;
   margin: 2rem 0;
+}
+
+.professional {
+  grid-column: 2 / span 1;
+
+  @media small {
+    grid-row: 4;
+  }
+}
+
+.personal {
+  grid-column: 3 / span 1;
+
+  @media small {
+    grid-row: 5;
+  }
+}
+
+.social {
+  grid-column: 4 / span 1;
+
+  @media small {
+    grid-row: 6;
+  }
+}
+
+.professional,
+.personal,
+.social {
+  @media small {
+    margin: 0;
+    grid-column: 1;
+  }
 }

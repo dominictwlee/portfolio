@@ -89,6 +89,10 @@ html {
   min-width: 300px;
   overflow-x: hidden;
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 48rem) {
+    font-size: 16px;
+  }
 }
 
 a {
@@ -117,4 +121,8 @@ button:hover {
 
 .pageContainer {
   padding: 3rem 8rem;
+
+  @media (max-width: 48rem) {
+    padding: 1rem;
+  }
 }
