@@ -4,6 +4,7 @@ import Obfuscate from 'react-obfuscate';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faCopy from '@fortawesome/fontawesome-free-regular/faCopy';
+import TransitionGroup from 'react-transition-group/TransitionGroup';
 
 import styles from './ContactModal.css';
 

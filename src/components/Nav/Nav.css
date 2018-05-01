@@ -12,33 +12,47 @@
 }
 
 .link {
-  position: relative;
+  font-size: 1rem;
   color: black;
-}
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 8px;
 
-.link::after {
-  content: '';
-  position: absolute;
-  bottom: -0.2rem;
-  left: 50%;
-  right: 50%;
-  height: 0.1rem;
-  background: black;
-  transition: all ease 0.2s;
-}
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: red;
+  }
 
-.link:hover::after {
-  left: 0;
-  right: 0;
-  height: 0.1rem;
-}
+  &:before {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+  }
 
-.link::before {
-  position: absolute;
-  transform: translateX(-100%);
-  left: -0.8rem;
-  opacity: 0.3;
-  font-weight: bold;
+  &:after {
+    opacity: 0;
+    transform: translateY(8px/2);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+  }
+  &:hover {
+    &:before,
+    &:after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    &:before {
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+    }
+    &:after {
+      transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
+    }
+  }
 }
 
 .activeLink {
