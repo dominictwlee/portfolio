@@ -75,9 +75,8 @@ th {
 
 /*============ Base Styles ============ */
 
-@value black: #11141e;
-@value white: #f7f8f8;
-@value red: #b3001b;
+@value small, medium from './breakpoints.css';
+@value black, white, red, grey from './colors.css';
 
 html {
   background-color: white;
@@ -90,7 +89,7 @@ html {
   overflow-x: hidden;
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 
-  @media (max-width: 48rem) {
+  @media small {
     font-size: 16px;
   }
 }
@@ -106,15 +105,15 @@ button {
   text-decoration: none;
   border-radius: 4px;
   background-color: white;
-  box-shadow: 0 0 0 0 black inset, 0.3rem 0.2rem 0 0 #a6bcc1;
-  border: 0.1rem solid #a6bcc1;
+  box-shadow: 0 0 0 0 black inset, 0.3rem 0.2rem 0 0 grey;
+  border: 0.1rem solid grey;
   padding: 0.5rem 0.8rem;
   text-align: center;
   transition: 0.25s box-shadow, 0.25s transform;
 }
 
 button:hover {
-  box-shadow: 0 4rem 0 0 black inset, 0 0 0 0 #a6bcc1;
+  box-shadow: 0 4rem 0 0 black inset, 0 0 0 0 grey;
   transform: translate(0.1rem, 0.1rem);
   color: white;
 }
@@ -122,7 +121,7 @@ button:hover {
 .pageContainer {
   padding: 3rem 8rem;
 
-  @media (max-width: 48rem) {
-    padding: 1rem;
+  @media small {
+    padding: 2rem;
   }
 }

@@ -1,4 +1,4 @@
-@values black, white, red from '../App/App.css';
+@values black, white, red from '../App/colors.css';
 
 .copyIcon {
   margin-left: 1rem;
