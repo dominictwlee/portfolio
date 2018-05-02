@@ -31,8 +31,8 @@
 .subHeader {
   font-size: 1.3rem;
   font-weight: bold;
-  grid-column: 2;
-  grid-row: 2 / span 1;
+  grid-column: 2 / span 3;
+  grid-row: 2;
   align-self: center;
 
   @media small {

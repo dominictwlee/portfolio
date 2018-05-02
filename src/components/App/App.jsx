@@ -35,9 +35,7 @@ class App extends React.Component {
             <Route path="/projects" component={Projects} />
           </Switch>
 
-          <ContactModal show={this.state.isOpen} onClose={this.toggleModal}>
-            Some content for the modal
-          </ContactModal>
+          <ContactModal show={this.state.isOpen} onClose={this.toggleModal} />
         </div>
       </Router>
     );
