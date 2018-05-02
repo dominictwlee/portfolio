@@ -7,6 +7,7 @@ import Nav from '../Nav/Nav';
 import HomeMain from '../HomeMain/HomeMain';
 import Projects from '../Projects/Projects';
 import ContactModal from '../ContactModal/ContactModal';
+import NotFound from '../NotFound/NotFound';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,8 +34,8 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={HomeMain} />
             <Route path="/projects" component={Projects} />
+            <Route component={NotFound} />
           </Switch>
-
           <ContactModal show={this.state.isOpen} onClose={this.toggleModal} />
         </div>
       </Router>
