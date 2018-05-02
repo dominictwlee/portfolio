@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import styles from './App.css';
@@ -29,15 +29,34 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className={styles.pageContainer}>
-          <Nav toggleModal={this.toggleModal} />
-          <Switch>
-            <Route exact path="/" component={HomeMain} />
-            <Route path="/projects" component={Projects} />
-            <Route component={NotFound} />
-          </Switch>
-          <ContactModal show={this.state.isOpen} onClose={this.toggleModal} />
-        </div>
+        <Route
+          render={({ location }) => (
+            <div className={styles.pageContainer}>
+              <Nav toggleModal={this.toggleModal} />
+              <TransitionGroup className={styles.pageMain}>
+                <CSSTransition
+                  key={location.key}
+                  classNames={{
+                    enter: styles.enter,
+                    enterActive: styles.enterActive,
+                    exit: styles.exit,
+                    exitActive: styles.exitActive
+                  }}
+                  timeout={300}
+                >
+                  <section className={styles.pageMainInner}>
+                    <Switch location={location}>
+                      <Route exact path="/" component={HomeMain} />
+                      <Route exact path="/projects" component={Projects} />
+                      <Route component={NotFound} />
+                    </Switch>
+                  </section>
+                </CSSTransition>
+              </TransitionGroup>
+              <ContactModal show={this.state.isOpen} onClose={this.toggleModal} />
+            </div>
+          )}
+        />
       </Router>
     );
   }
