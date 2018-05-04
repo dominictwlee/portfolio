@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(3rem, 1fr));
-  grid-column-gap: 1.5rem;
+  grid-column-gap: 3rem;
   margin: 2rem 0;
 
   @media small {
@@ -67,7 +67,7 @@
 .personal,
 .social {
   grid-row: 3;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .professional {
@@ -101,4 +101,12 @@
     margin: 0;
     grid-column: 1;
   }
+}
+
+.bodyTitle {
+  font-weight: bold;
+}
+
+.sectionSpacing {
+  margin-top: 1rem;
 }

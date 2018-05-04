@@ -1,0 +1,128 @@
+/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+ul {
+  list-style: none;
+}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+img,
+embed,
+iframe,
+object,
+audio,
+video {
+  height: auto;
+  max-width: 100%;
+}
+iframe {
+  border: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+@value small, medium from './components/App/breakpoints.css';
+@value black, white, red, grey from './components/App/colors.css';
+
+html {
+  background-color: white;
+  color: black;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  min-height: 100vh;
+  min-width: 300px;
+  overflow-x: hidden;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+
+  @media small {
+    font-size: 16px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: black;
+  text-decoration: none;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 0 0 0 black inset, 0.3rem 0.2rem 0 0 grey;
+  border: 0.1rem solid grey;
+  padding: 0.5rem 0.8rem;
+  text-align: center;
+  transition: 0.25s box-shadow, 0.25s transform;
+}
+
+button:hover {
+  box-shadow: 0 4rem 0 0 black inset, 0 0 0 0 grey;
+  transform: translate(0.1rem, 0.1rem);
+  color: white;
+}

@@ -3,16 +3,28 @@ import PropTypes from 'prop-types';
 import Obfuscate from 'react-obfuscate';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import faCopy from '@fortawesome/fontawesome-free-regular/faCopy';
+import posed from 'react-pose';
+// import { tween } from 'popmotion';
 
 import styles from './ContactModal.css';
+
+const poseProps = {
+  visible: { opacity: 1, scaleY: 1 },
+  hidden: {
+    opacity: 0,
+    scaleY: 0
+  }
+};
+
+const CopiedMsg = posed.div(poseProps);
 
 class ContactModal extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      copied: false
+      copied: false,
+      isVisible: false
     };
 
     this.onClose = this.onClose.bind(this);
@@ -21,6 +33,7 @@ class ContactModal extends React.Component {
   onClose() {
     this.props.onClose();
     this.setState({ copied: false });
+    this.setState({ isVisible: false });
   }
 
   render() {
@@ -34,10 +47,25 @@ class ContactModal extends React.Component {
           <h3>Projects, job opportunities, or even just a chat over coffee!</h3>
           <div>
             <Obfuscate email="dominictwlee@gmail.com" />
-            <CopyToClipboard text="dominictwlee@gmail.com" onCopy={() => this.setState({ copied: true })}>
-              <FontAwesomeIcon className={styles.copyIcon} icon={faCopy} />
+
+            <CopyToClipboard
+              text="dominictwlee@gmail.com"
+              onCopy={() => {
+                this.setState({ copied: true }, () => {
+                  this.setState({ isVisible: true });
+                });
+              }}
+            >
+              <FontAwesomeIcon className={styles.copyIcon} icon={['far', 'copy']} />
             </CopyToClipboard>
-            {this.state.copied ? <span style={{ color: 'red' }}>Copied.</span> : null}
+
+            <div className={styles.notifyContainer}>
+              {this.state.copied ? (
+                <CopiedMsg className={styles.notify} pose={this.state.isVisible ? 'visible' : 'hidden'}>
+                  Copied.
+                </CopiedMsg>
+              ) : null}
+            </div>
           </div>
           <div className="footer">
             <button onClick={this.onClose}>Close</button>
