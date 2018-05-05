@@ -6,11 +6,12 @@ import github from '@fortawesome/fontawesome-free-brands/faGithub';
 import linkedin from '@fortawesome/fontawesome-free-brands/faLinkedin';
 import spotify from '@fortawesome/fontawesome-free-brands/faSpotify';
 import faCopy from '@fortawesome/fontawesome-free-regular/faCopy';
+import fbMessenger from '@fortawesome/fontawesome-free-brands/faFacebookMessenger';
 
 import './index.css';
 import App from './components/App/App';
 
-fontawesome.library.add(instagram, github, linkedin, spotify, faCopy);
+fontawesome.library.add(instagram, github, linkedin, spotify, faCopy, fbMessenger);
 
 const renderApp = () => {
   render(<App />, document.getElementById('app'));

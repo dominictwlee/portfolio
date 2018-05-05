@@ -22,21 +22,25 @@
 }
 
 .enter {
-  opacity: 0;
+  opacity: 0.01;
   z-index: 1;
+  transform: translateX(50%);
 }
 
-.enter.enterActive {
+.enterActive {
   opacity: 1;
-  transition: opacity 250ms ease-in;
+  transform: translateX(0%);
+  transition: all 300ms ease-out;
 }
 
 .exit {
   opacity: 1;
+  transform: translateY(0%);
   z-index: 0;
 }
 
 .exit.exitActive {
   opacity: 0;
-  transition: opacity 250ms ease-in;
+  transform: translateY(100%);
+  transition: all 300ms ease-in;
 }

@@ -4,12 +4,12 @@ import Obfuscate from 'react-obfuscate';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import posed from 'react-pose';
-// import { tween } from 'popmotion';
+import { tween } from 'popmotion';
 
 import styles from './ContactModal.css';
 
 const poseProps = {
-  visible: { opacity: 1, scaleY: 1 },
+  visible: { opacity: 1, scaleY: 1, transition: () => tween({ duration: 100 }) },
   hidden: {
     opacity: 0,
     scaleY: 0
@@ -44,9 +44,9 @@ class ContactModal extends React.Component {
     return (
       <div className={styles.backdrop}>
         <div className={styles.modal}>
-          <h3>Projects, job opportunities, or even just a chat over coffee!</h3>
+          <h3>You can get in touch with me at:</h3>
           <div>
-            <Obfuscate email="dominictwlee@gmail.com" />
+            <Obfuscate className={styles.email} email="dominictwlee@gmail.com" />
 
             <CopyToClipboard
               text="dominictwlee@gmail.com"
@@ -61,10 +61,24 @@ class ContactModal extends React.Component {
 
             <div className={styles.notifyContainer}>
               {this.state.copied ? (
-                <CopiedMsg className={styles.notify} pose={this.state.isVisible ? 'visible' : 'hidden'}>
+                <CopiedMsg
+                  className={styles.notify}
+                  pose={this.state.isVisible ? 'visible' : 'hidden'}
+                  onPoseComplete={() =>
+                    setTimeout(() => {
+                      this.setState({ isVisible: false });
+                    }, 600)
+                  }
+                >
                   Copied.
                 </CopiedMsg>
               ) : null}
+            </div>
+
+            <div>
+              <a href="https://m.me/Dominictzlee">
+                <FontAwesomeIcon className={styles.fbMsgIcon} icon={['fab', 'facebook-messenger']} />
+              </a>
             </div>
           </div>
           <div className="footer">

@@ -42,7 +42,7 @@ class App extends React.Component {
                     exit: styles.exit,
                     exitActive: styles.exitActive
                   }}
-                  timeout={300}
+                  timeout={350}
                 >
                   <section className={styles.pageMainInner}>
                     <Switch location={location}>
