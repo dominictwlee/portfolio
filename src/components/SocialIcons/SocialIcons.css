@@ -1,8 +1,37 @@
+@values red from '../App/colors.css';
+
 .iconBar {
   display: flex;
 }
 
-.icon {
+.iconContainer {
   margin-right: 1rem;
   margin-top: 0.5rem;
+}
+
+.linkedin {
+  &:hover,
+  &:focus {
+    color: #0077b5;
+    transform: scale(1.1);
+  }
+}
+
+.instagram {
+  &:hover,
+  &:focus {
+    background: linear-gradient(to bottom right, #495fc6, #b82cb5, #ff834c, #ffd15f);
+    border-radius: 10px;
+    color: white;
+    padding: 0.1rem 0.2rem;
+    transform: scale(1.2);
+  }
+}
+
+.github {
+  &:hover,
+  &:focus {
+    color: red;
+    transform: scale(1.1);
+  }
 }

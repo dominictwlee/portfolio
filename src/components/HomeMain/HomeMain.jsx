@@ -85,7 +85,7 @@ const BodyColumn = ({ styleClass, body }) => (
         {content ? <p key={id}>{content}</p> : null}
         {link ? (
           <a key={`${id}Link`} href={link}>
-            <FontAwesomeIcon icon={['fab', 'spotify']} size="2x" />
+            <FontAwesomeIcon icon={['fab', 'spotify']} size="2x" className={styles.spotifyIcon} />
           </a>
         ) : null}
         {id === 'socialMedia' ? <SocialIcons /> : null}

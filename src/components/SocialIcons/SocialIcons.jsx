@@ -6,25 +6,28 @@ import styles from './SocialIcons.css';
 const icons = [
   {
     id: 'instagram',
-    url: 'https://www.instagram.com/dominictwlee/'
+    url: 'https://www.instagram.com/dominictwlee/',
+    iconClass: styles.instagram
   },
 
   {
     id: 'linkedin',
-    url: 'https://www.linkedin.com/in/dominic-lee-705646162/'
+    url: 'https://www.linkedin.com/in/dominic-lee-705646162/',
+    iconClass: styles.linkedin
   },
   {
     id: 'github',
-    url: 'https://github.com/dominictwlee'
+    url: 'https://github.com/dominictwlee',
+    iconClass: styles.github
   }
 ];
 
 const SocialIcons = () => (
   <ul className={styles.iconBar}>
-    {icons.map(({ id, url }) => (
-      <li className={styles.icon} key={id}>
+    {icons.map(({ id, url, iconClass }) => (
+      <li className={styles.iconContainer} key={id}>
         <a href={url}>
-          <FontAwesomeIcon icon={['fab', id]} size="2x" />
+          <FontAwesomeIcon icon={['fab', id]} size="2x" className={iconClass} />
         </a>
       </li>
     ))}

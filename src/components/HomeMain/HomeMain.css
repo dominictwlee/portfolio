@@ -109,3 +109,13 @@
 .sectionSpacing {
   margin-top: 1rem;
 }
+
+.spotifyIcon {
+  margin-top: 0.5rem;
+
+  &:hover,
+  &:focus {
+    color: #1ed760;
+    transform: scale(1.1);
+  }
+}
