@@ -75,14 +75,16 @@ class ContactModal extends React.Component {
               ) : null}
             </div>
 
-            <div>
+            <div className={styles.iconContainer}>
               <a href="https://m.me/Dominictzlee">
                 <FontAwesomeIcon className={styles.fbMsgIcon} icon={['fab', 'facebook-messenger']} />
               </a>
             </div>
           </div>
-          <div className="footer">
-            <button onClick={this.onClose}>Close</button>
+          <div className={styles.footer}>
+            <button className={styles.closeButton} onClick={this.onClose}>
+              Close
+            </button>
           </div>
         </div>
       </div>

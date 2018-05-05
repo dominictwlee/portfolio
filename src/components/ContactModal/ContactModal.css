@@ -1,5 +1,9 @@
 @values black, white, red from '../App/colors.css';
 
+.modalItems {
+  margin-bottom: 2rem;
+}
+
 .copyIcon {
   margin: 0 1rem;
 
@@ -25,7 +29,10 @@
   min-width: 18.7rem;
   min-height: 18.7rem;
   margin: 0 auto;
-  padding: 30px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
 }
 
 .notifyContainer {
@@ -43,4 +50,13 @@
 .email {
   text-decoration: underline;
   color: blue;
+  margin-top: 2rem;
+}
+
+.iconContainer {
+  margin-top: 0.5rem;
+}
+
+.footer {
+  margin-top: 1rem;
 }
