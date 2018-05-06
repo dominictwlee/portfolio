@@ -23,8 +23,7 @@ export default class Contact extends React.Component {
     super(props);
 
     this.state = {
-      copied: false,
-      isVisible: false
+      copied: false
     };
 
     this.onClose = this.onClose.bind(this);
@@ -32,7 +31,6 @@ export default class Contact extends React.Component {
 
   onClose() {
     this.setState({ copied: false });
-    this.setState({ isVisible: false });
   }
 
   render() {
@@ -41,28 +39,13 @@ export default class Contact extends React.Component {
         <h3>You can get in touch with me at:</h3>
         <div>
           <Obfuscate className={styles.email} email="dominictwlee@gmail.com" />
-          <CopyToClipboard
-            text="dominictwlee@gmail.com"
-            onCopy={() => {
-              this.setState({ copied: true }, () => {
-                this.setState({ isVisible: true });
-              });
-            }}
-          >
+          <CopyToClipboard text="dominictwlee@gmail.com" onCopy={() => this.setState({ copied: true })}>
             <FontAwesomeIcon className={styles.copyIcon} icon={['far', 'copy']} />
           </CopyToClipboard>
 
           <div className={styles.notifyContainer}>
             {this.state.copied ? (
-              <CopiedMsg
-                className={styles.notify}
-                pose={this.state.isVisible ? 'visible' : 'hidden'}
-                onPoseComplete={() =>
-                  setTimeout(() => {
-                    this.setState({ isVisible: false });
-                  }, 600)
-                }
-              >
+              <CopiedMsg className={styles.notify} pose={this.state.copied ? 'visible' : 'hidden'}>
                 Copied.
               </CopiedMsg>
             ) : null}
