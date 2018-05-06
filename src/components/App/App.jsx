@@ -6,7 +6,8 @@ import styles from './App.css';
 import Nav from '../Nav/Nav';
 import HomeMain from '../HomeMain/HomeMain';
 import Projects from '../Projects/Projects';
-import ContactModal from '../ContactModal/ContactModal';
+import Modal from '../Modal/Modal';
+import Contact from '../Contact/Contact';
 import NotFound from '../NotFound/NotFound';
 
 class App extends React.Component {
@@ -53,7 +54,9 @@ class App extends React.Component {
                   </section>
                 </CSSTransition>
               </TransitionGroup>
-              <ContactModal show={this.state.isOpen} onClose={this.toggleModal} />
+              <Modal show={this.state.isOpen} onClose={this.toggleModal}>
+                <Contact />
+              </Modal>
             </div>
           )}
         />

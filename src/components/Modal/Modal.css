@@ -1,0 +1,27 @@
+@values black, white, red from '../App/colors.css';
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding-top: 4rem;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 5px;
+  max-width: 31.2rem;
+  min-width: 17.7rem;
+  min-height: 18.7rem;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: 1rem;
+}
