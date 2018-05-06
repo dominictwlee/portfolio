@@ -68,7 +68,7 @@ const homeContent = [
       {
         id: 'status',
         title: "What I'm up to:",
-        content: 'Looking for work, internships, and mentors.'
+        content: 'Looking for work, internships, mentors and trainee programmes'
       }
     ],
     class: styles.social
