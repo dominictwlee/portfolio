@@ -1,43 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import posed from 'react-pose';
+import posed from 'react-pose';
 // import { tween } from 'popmotion';
 
 import styles from './Modal.css';
 
-export default class Modal extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.onClose = this.onClose.bind(this);
+const backdropProps = {
+  open: {
+    x: '0%',
+    delayChildren: 300,
+    staggerChildren: 500
+  },
+  closed: {
+    delay: 500,
+    staggerChildren: 20,
+    x: '-100%'
   }
+};
 
-  onClose() {
-    this.props.onClose();
-  }
+const dialogProps = {
+  open: { opacity: 1, y: 0 },
+  closed: { opacity: 0, y: 50 }
+};
 
-  render() {
-    if (!this.props.show) {
-      return null;
-    }
+const Backdrop = posed.div(backdropProps);
+const Dialog = posed.div(dialogProps);
 
-    return (
-      <div className={styles.backdrop}>
-        <div className={styles.modal}>
-          {this.props.children}
-          <div className={styles.footer}>
-            <button className={styles.closeButton} onClick={this.onClose}>
-              Close
-            </button>
-          </div>
-        </div>
+const Modal = props => (
+  <Backdrop className={styles.backdrop} pose={props.show ? 'open' : 'closed'}>
+    <Dialog className={styles.modal}>
+      {props.children}
+      <div className={styles.footer}>
+        <button className={styles.closeButton} onClick={props.onClose}>
+          Close
+        </button>
       </div>
-    );
-  }
-}
+    </Dialog>
+  </Backdrop>
+);
 
 Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
   show: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired
 };
+
+export default Modal;
