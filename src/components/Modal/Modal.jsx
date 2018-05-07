@@ -1,19 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import posed from 'react-pose';
-// import { tween } from 'popmotion';
 
 import styles from './Modal.css';
 
 const backdropProps = {
   open: {
     x: '0%',
-    delayChildren: 300,
-    staggerChildren: 500
+    delayChildren: 300
   },
   closed: {
-    delay: 500,
-    staggerChildren: 20,
+    delay: 100,
     x: '-100%'
   }
 };
