@@ -4,15 +4,15 @@ import Obfuscate from 'react-obfuscate';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import posed from 'react-pose';
-import { tween } from 'popmotion';
 
 import styles from './Contact.css';
 
 const poseProps = {
-  visible: { opacity: 1, scaleY: 1, transition: () => tween({ duration: 100 }) },
+  visible: { opacity: 1, scaleY: 1, x: 0 },
   hidden: {
     opacity: 0,
-    scaleY: 0
+    scaleY: 0,
+    x: 100
   }
 };
 
@@ -39,16 +39,23 @@ export default class Contact extends React.Component {
         <h3>You can get in touch with me at:</h3>
         <div>
           <Obfuscate className={styles.email} email="dominictwlee@gmail.com" />
-          <CopyToClipboard text="dominictwlee@gmail.com" onCopy={() => this.setState({ copied: true })}>
+          <CopyToClipboard
+            text="dominictwlee@gmail.com"
+            onCopy={() =>
+              this.setState({ copied: true }, () => {
+                setTimeout(() => {
+                  this.setState({ copied: false });
+                }, 1000);
+              })
+            }
+          >
             <FontAwesomeIcon className={styles.copyIcon} icon={['far', 'copy']} />
           </CopyToClipboard>
 
           <div className={styles.notifyContainer}>
-            {this.state.copied ? (
-              <CopiedMsg className={styles.notify} pose={this.state.copied ? 'visible' : 'hidden'}>
-                Copied.
-              </CopiedMsg>
-            ) : null}
+            <CopiedMsg className={styles.notify} pose={this.state.copied ? 'visible' : 'hidden'}>
+              Copied.
+            </CopiedMsg>
           </div>
 
           <div className={styles.iconContainer}>
