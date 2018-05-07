@@ -44,6 +44,10 @@
 
 .fbMsgIcon {
   font-size: 2rem;
+
+  &:hover {
+    color: #0081ff;
+  }
 }
 
 .email {
