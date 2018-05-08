@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 import styles from './Nav.css';
 
 const Nav = props => (
-  <nav className={styles.navbar}>
+  <nav>
     <ul className={styles.list}>
-      <li className={styles.item}>
+      <li>
         <NavLink exact activeClassName={styles.activeLink} className={styles.link} to="/">
           Home
         </NavLink>
       </li>
-      <li className={styles.item}>
+      <li>
         <NavLink activeClassName={styles.activeLink} className={styles.link} to="/projects">
           Projects
         </NavLink>

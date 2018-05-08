@@ -2,39 +2,62 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Projects.css';
+import asianFood from '../../assets/asian-food.png';
+import js30 from '../../assets/javascript-30.png';
+
+const projectData = [
+  {
+    id: 'asianfood',
+    name: 'Asian Munchies Worldwide',
+    image: asianFood,
+    github: 'https://github.com/dominictwlee/food-directory-app',
+    host: 'https://protected-ocean-26918.herokuapp.com'
+  },
+  {
+    id: 'javascript30',
+    name: 'Javascript30',
+    image: js30,
+    github: 'https://github.com/dominictwlee/javascript-30',
+    host: 'https://angry-goldwasser-cf5012.netlify.com'
+  }
+];
 
 const Card = props => (
   <div className={styles.card}>
-    <img src={props.image} alt={props.name} />
-    <h1>{props.name}</h1>
-    <p>{props.description}</p>
+    <figure className={styles.imageContainer}>
+      <img src={props.image} alt={props.name} />
+    </figure>
+
+    <h3 className={styles.projectName}>{props.name}</h3>
+
+    <div className={styles.cardFooter}>
+      <div className={styles.cardFooterItem}>
+        <a href={props.host} target="_blank">
+          See It Live
+        </a>
+      </div>
+      <div className={styles.cardFooterItem}>
+        <a href={props.github} target="_blank">
+          Github Repo
+        </a>
+      </div>
+    </div>
   </div>
 );
 
 Card.propTypes = {
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  host: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired
 };
 
 const Projects = () => (
   <main className={styles.container}>
     <h1 className={styles.title}>Projects</h1>
-    <Card
-      image="https://i1.wp.com/www.styleshout.com/wp-content/uploads/2017/05/dazzle.jpg?fit=1050%2C730&ssl=1"
-      name="My Project"
-      description="This is a project"
-    />
-    <Card
-      image="https://i1.wp.com/www.styleshout.com/wp-content/uploads/2017/05/dazzle.jpg?fit=1050%2C730&ssl=1"
-      name="My Project2"
-      description="This is another project"
-    />
-    <Card
-      image="https://i1.wp.com/www.styleshout.com/wp-content/uploads/2017/05/dazzle.jpg?fit=1050%2C730&ssl=1"
-      name="My Project3"
-      description="This is the third project"
-    />
+    {projectData.map(({ id, name, image, github, host }) => (
+      <Card key={id} image={image} name={name} github={github} host={host} />
+    ))}
   </main>
 );
 

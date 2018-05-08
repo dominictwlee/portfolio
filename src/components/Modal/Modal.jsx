@@ -28,9 +28,7 @@ const Modal = props => (
     <Dialog className={styles.modal}>
       {props.children}
       <div className={styles.footer}>
-        <button className={styles.closeButton} onClick={props.onClose}>
-          Close
-        </button>
+        <button onClick={props.onClose}>Close</button>
       </div>
     </Dialog>
   </Backdrop>

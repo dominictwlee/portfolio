@@ -15,7 +15,7 @@ const homeContent = [
         id: 'bio',
         title: 'Me in a nutshell:',
         content:
-          "Ex-teacher and ex-fitness/nutrition coach. Empathetic communicator with a strong desire to help others. Self-taught, self-driven, and obsessively coding since January. Aspiring open source contributor. Whatever I lack in experience and natural talent, I'll make up for in grit, curiosity, and humbleness."
+          "Ex-teacher and ex-fitness/nutrition coach with a knack for empathy and communication. Self-taught, self-driven, and obsessively coding since January. Aspiring open source contributor. Whatever I lack in experience and natural talent, I'll make up for in grit, curiosity, and humbleness."
       },
 
       {

@@ -1,3 +1,5 @@
+@value black, white, red, grey from '../App/colors.css';
+
 .container {
   display: flex;
   flex-flow: wrap;
@@ -15,9 +17,62 @@
   margin-bottom: 1.5rem;
 }
 
+.projectName {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
 .card {
-  background-color: white;
+  text-align: center;
+  background-color: #fcfafa;
+  max-width: 25rem;
   margin: 1rem;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-  flex: 1 1 20rem;
+  flex: 1 1 auto;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+@keyframes cardFooterItem {
+  50% {
+    background-color: rgba(2, 24, 43, 0.75);
+  }
+}
+
+.cardFooterItem {
+  flex: 1 1 auto;
+  padding: 0.5rem 1rem;
+  background-color: rgb(236, 236, 236);
+  transition-duration: 500ms;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    animation-name: cardFooterItem;
+    animation-duration: 800ms;
+    animation-delay: 400ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background-color: #02182b;
+  }
+}
+
+.cardFooterItem > a {
+  width: inherit;
+  font-weight: 600;
+  color: #12355b;
+  text-decoration: underline;
+  transition-duration: 300ms;
+  transition-property: color;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.imageContainer {
+  padding: 1.5rem;
 }
