@@ -3,7 +3,7 @@
 .container {
   display: flex;
   flex-flow: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 0 auto;
 }
@@ -25,10 +25,10 @@
 .card {
   text-align: center;
   background-color: #fcfafa;
-  max-width: 25rem;
+  min-width: 15rem;
   margin: 1rem;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-  flex: 1 1 auto;
+  flex: 0 1 25rem;
 }
 
 .cardFooter {
