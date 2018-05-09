@@ -3,3 +3,4 @@ node_modules/
 .eslintcache
 *.map
 *.bundle.js
+.netlify

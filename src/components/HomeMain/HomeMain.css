@@ -76,6 +76,7 @@
 .image {
   border-radius: 100%;
   min-width: 10rem;
+  max-width: 18rem;
 
   @media medium {
     max-width: 16rem;
@@ -91,6 +92,7 @@
 .social {
   grid-row: 3;
   margin: 1rem 0;
+  overflow-wrap: break-word;
 }
 
 .professional {
@@ -159,4 +161,8 @@
     color: #1ed760;
     transform: scale(1.1);
   }
+}
+
+.bodyText {
+  max-width: 20rem;
 }

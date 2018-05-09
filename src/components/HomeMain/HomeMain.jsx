@@ -82,7 +82,11 @@ const BodyColumn = ({ styleClass, body }) => (
         <h4 className={styles.bodyTitle} key={`${id}Header`}>
           {title}
         </h4>
-        {content ? <p key={id}>{content}</p> : null}
+        {content ? (
+          <p className={styles.bodyText} key={id}>
+            {content}
+          </p>
+        ) : null}
         {link ? (
           <a key={`${id}Link`} href={link}>
             <FontAwesomeIcon icon={['fab', 'spotify']} size="2x" className={styles.spotifyIcon} />
