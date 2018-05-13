@@ -47,13 +47,13 @@
   flex: 1 1 auto;
   padding: 0.5rem 1rem;
   background-color: rgb(236, 236, 236);
-  transition-duration: 500ms;
+  transition-duration: 300ms;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
 
   &:hover {
     animation-name: cardFooterItem;
-    animation-duration: 800ms;
-    animation-delay: 400ms;
+    animation-duration: 700ms;
+    animation-delay: 300ms;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     background-color: #02182b;
