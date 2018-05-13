@@ -49,7 +49,7 @@ class App extends React.Component {
                     <Switch location={location}>
                       <Route exact path="/" component={HomeMain} />
                       <Route exact path="/projects" component={Projects} />
-                      <Route component={NotFound} />
+                      <Route render={() => <NotFound />} />
                     </Switch>
                   </section>
                 </CSSTransition>
