@@ -4,3 +4,4 @@ node_modules/
 *.map
 *.bundle.js
 .netlify
+_redirects
