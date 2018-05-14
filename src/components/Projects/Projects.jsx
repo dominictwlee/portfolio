@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import styles from './Projects.css';
 import asianFood from '../../assets/asian-food.png';
 import js30 from '../../assets/javascript-30.png';
+import yelpCamp from '../../assets/yelp-camp.png';
+import weatherApp from '../../assets/weather-app.png';
 
 const projectData = [
   {
@@ -19,6 +21,20 @@ const projectData = [
     image: js30,
     github: 'https://github.com/dominictwlee/javascript-30',
     host: 'https://angry-goldwasser-cf5012.netlify.com'
+  },
+  {
+    id: 'yelpcamp',
+    name: 'YelpCamp',
+    image: yelpCamp,
+    github: 'https://github.com/dominictwlee/yelp-camp',
+    host: 'https://angry-goldwasser-cf5012.netlify.com'
+  },
+  {
+    id: 'weather',
+    name: 'Weather App',
+    image: weatherApp,
+    github: 'https://github.com/dominictwlee/node-weather-app',
+    host: 'https://weather-app-28837.herokuapp.com'
   }
 ];
 
