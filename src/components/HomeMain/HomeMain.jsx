@@ -15,7 +15,7 @@ const homeContent = [
         id: 'bio',
         title: 'Me in a nutshell:',
         content:
-          "Ex-teacher and ex-fitness/nutrition coach with a knack for empathy and communication. Self-taught, self-driven, and obsessively coding since January. Aspiring open source contributor. Whatever I lack in experience and natural talent, I'll make up for in grit, curiosity, and humbleness."
+          'Ex-teacher and ex-fitness/nutrition coach with a knack for empathy and communication. Self-taught, self-driven, and obsessively coding since January. Newbie open source contributor. Humble lifelong learner that thrives on meeting new challenges. Average talent but copious amounts of grit.'
       },
 
       {
@@ -38,14 +38,13 @@ const homeContent = [
     id: 'personal',
     body: [
       {
-        id: 'exercise',
-        title: 'Physical Activities:',
-        content:
-          "I enjoy Muay Thai, strength training and hiking, though I've mostly been in front of the computer these days and need to get back into a more balanced lifestyle."
+        id: 'future',
+        title: 'Things I want to learn:',
+        content: 'Rust, Redux, Firefox WebExtensions, socket.IO, GraphQL, Redis, GatsbyJS, Sass.'
       },
       {
         id: 'music',
-        title: "What I'm listening To:",
+        title: "What I'm listening to:",
         content: 'Mostly metal, a bit of hip hop, and a touch of glitchy, dreamy weird stuff.',
         link: 'https://open.spotify.com/user/1294635599/playlist/3shMSYLIVvr1tn6vXuVzZC?si=N038gBFYRAOcro2V6oCXeQ'
       },
@@ -68,7 +67,8 @@ const homeContent = [
       {
         id: 'status',
         title: "What I'm up to:",
-        content: 'Looking for work, internships, mentors and trainee programmes'
+        content:
+          'Looking for work, internships, mentors and trainee programmes. Searching for open source projects to contribute to.'
       }
     ],
     class: styles.social
