@@ -39,7 +39,7 @@ const projectData = [
   },
   {
     id: 'todo',
-    name: 'Todo React',
+    name: 'Todo App',
     image: reactTodo,
     github: 'https://github.com/dominictwlee/node-todo-api',
     host: 'https://todo-app-83922.herokuapp.com/'
