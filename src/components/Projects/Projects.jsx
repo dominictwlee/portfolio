@@ -6,6 +6,7 @@ import asianFood from '../../assets/asian-food.png';
 import js30 from '../../assets/javascript-30.png';
 import yelpCamp from '../../assets/yelp-camp.png';
 import weatherApp from '../../assets/weather-app.png';
+import reactTodo from '../../assets/react-todo.png';
 
 const projectData = [
   {
@@ -27,7 +28,7 @@ const projectData = [
     name: 'YelpCamp',
     image: yelpCamp,
     github: 'https://github.com/dominictwlee/yelp-camp',
-    host: 'https://angry-goldwasser-cf5012.netlify.com'
+    host: 'https://yelp-camp-83922.herokuapp.com/'
   },
   {
     id: 'weather',
@@ -35,6 +36,13 @@ const projectData = [
     image: weatherApp,
     github: 'https://github.com/dominictwlee/node-weather-app',
     host: 'https://weather-app-28837.herokuapp.com'
+  },
+  {
+    id: 'todo',
+    name: 'Todo React',
+    image: reactTodo,
+    github: 'https://github.com/dominictwlee/node-todo-api',
+    host: 'https://todo-app-83922.herokuapp.com/'
   }
 ];
 
